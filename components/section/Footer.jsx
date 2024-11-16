@@ -1,3 +1,4 @@
+'use client';
 import React from 'react'
 import {footerlistleft,footerlistright} from '@/constants'
 import Image from 'next/image'
