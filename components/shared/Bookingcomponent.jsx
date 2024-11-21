@@ -21,31 +21,31 @@ import {
     CardHeader,
     CardTitle,
   } from "@/components/ui/card"
-const Bookingcomponent = ({className}) => {
+const Bookingcomponent = ({position}) => {
     const [adultposition, setadultPosition] = useState("1");
     const [childposition, setchildPosition] = useState("1");
     const listofnumbers=["1","2","3","4","5","6"]
   return (
-    <div className={className}>
-        <Card className='w-[450px] shadow-2xl'>
+    <div className={position}>
+        <Card className='container sm:shadow-2xl border-none sm:border 2xl:w-[450px] 2xl:ml-4 2xl:mt-16'>
             <CardHeader>
-                <h2 className='font-bold text-4xl'>Find places to stay on Airbnb</h2>
-                <CardDescription>Discover entire homes and rooms perfect for any trip.</CardDescription>
+                <h2 className='font-bold text-xl 2xl:text-4xl'>Find places to stay on Airbnb</h2>
+                <CardDescription className='text-sm font-semibold'>Discover entire homes and rooms perfect for any trip.</CardDescription>
             </CardHeader>
             <div className='block'>
                 <div className='mx-4 rounded-md border '>
-                    <p className='ml-2 mt-1 font-semibold'>Location</p>
+                    <p className='ml-2 mt-1 font-semibold text-md'>Location</p>
                     <Input type='Location' placeholder='Anywhere' 
-                    className="border-none focus-visible:ring-transparent focus-visible:ring-offset-0 placeholder:text-lg" />
+                    className="border-none focus-visible:ring-transparent focus-visible:ring-offset-0 placeholder:text-xs" />
                 </div>
                 <div className='mx-4 my-4
                  rounded-md border'>
-                    <p className='font-semibold ml-2 mt-1'>Check In-Out</p>
+                    <p className='font-semibold ml-2 mt-1 text-md'>Check In-Out</p>
                     <DatePickerWithRange className={`border-none`}/>
                 </div>
-                <div className='mx-4 my-4 rounded-md border flex justify-evenly'>
+                <div className='mx-4 my-1 rounded-md border flex justify-evenly'>
                     <div className='mb-4 mt-1 '>
-                        <p className='font-semibold text-lg'>Adults</p>
+                        <p className='font-semibold text-md'>Adults</p>
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
                                 <Button variant="outline">{adultposition}</Button>
@@ -64,7 +64,7 @@ const Bookingcomponent = ({className}) => {
                     </div>
                     <div className='w-[1px] max-h-full my-3 bg-gray-400'></div>
                     <div className='mb-4 mt-1'>
-                    <p className='font-semibold text-lg'>Children</p>
+                    <p className='font-semibold text-md'>Children</p>
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
                                 <Button variant="outline">{childposition}</Button>

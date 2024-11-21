@@ -159,13 +159,16 @@ export const accordionlist=[
   
 ]
 
-export const footerlistleft=[
-  {name:'© 2024 Airbnb'},
-   {name: 'Inc'},
-   { name:'PrivacyTermsSitemapCompany'} ,
-   { name:'details'}
+export const footerlist0=[ 
+   {name:'© 2024 Airbnb,Inc'}
+  ]
+export const footerlist1=[
+  { name:'Privacy'} ,
+  { name:'Terms'} ,
+  { name:'Sitemap'} ,
+   { name:'Company details'}
 ]
-export const footerlistright=[
+export const footerlist2=[
   {src:'/facebook.svg'},
   {src:'/twitter.svg'},
   {src:'/insta.svg'}

@@ -1,13 +1,33 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { Button } from '../ui/button';
 import Header from '@/components/shared/Header';
 const Customsubsectiontwo = ({title,subtitle,list,button}) => {
+
+    // const [currentdiv,setcurrentdiv]=useState(0);
+    const handlenext=()=>{
+        setcurrentdiv((prev)=>(prev+1))
+    }
+    const handleprev=()=>{
+        setcurrentdiv((prev)=>(prev-1))
+    }
   return (
-    <section className='my-[150px] w-[1300px] mx-auto'>
+    <section className='my-[50px] w-full mx-4  '>
         
-        <Header title={title} subtitle={subtitle}/>
-        <div className='flex items-center gap-10'>
+        <div className="xl:w-[1350px] xl:mx-auto">
+        <div className='flex justify-between mr-5 sm:mr-10'>
+            <Header title={title} subtitle={subtitle}/>
+            <div className='flex md:hidden gap-2 mt-10 '>
+                <div className=' border px-3 py-3 h-10 rounded-full'>
+                    <Image src='/right-arrow.svg' width={12} height={12} alt='left-arrow' className='transform scale-x-[-1] w-3 h-3'/>
+                </div>
+                <div className=' border px-3 py-3 h-10 rounded-full'>
+                    <Image src='/right-arrow.svg' width={12} height={12} alt='right-arrow' className='w-3 h-3'/>
+                </div>
+            </div>
+        </div>
+        <div className='flex items-center gap-5 w-max whitespace-nowrap '>
             
             {list.map((elements, index) => (
             <div key={index} className=''>
@@ -40,6 +60,7 @@ const Customsubsectiontwo = ({title,subtitle,list,button}) => {
         </div>
         <div className='flex my-7'>
             <Button className='bg-white text-black border-2 border-black font-sans text-lg hover:bg-gray-100 h-12 '>{button}</Button>
+        </div>
         </div>
     </section>
   );
